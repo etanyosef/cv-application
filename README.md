@@ -1,3 +1,7 @@
+# CV Application
+
+This project is from The Odin Project react course where users can input their information and generate a CV/résumé.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
