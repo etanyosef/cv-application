@@ -5,21 +5,19 @@
 
 body {
     background-color: rgb(244, 244, 244);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2a2a2a;
 }
 
 main > .container {
     display: flex;
     justify-content: center;
-    gap: 0;
+    gap: 30px;
 }
 
 main .sidebar {
     width: 340px;
     display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
 }
 
 main .sidebar nav {
@@ -29,12 +27,59 @@ main .sidebar nav {
 }
 
 main .sidebar section.editor {
-    padding: 20px 14px;
-    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 2rem;
+    width: 100%;
+}
+
+main .sidebar section.editor > div {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 0 9px #dadada;
+}
+
+main .sidebar section.editor .form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+main .sidebar section.editor .form-input input,
+main .sidebar section.editor .form-button {
+    padding: 8px 6px;
+    border: 1px solid #d9d8e5;
+    border-radius: 6px;
+}
+
+main .sidebar section.editor .form-input input:focus {
+    outline: 2px solid #007bff66;
+}
+
+main .sidebar section.editor .form-input label {
+    font-size: 0.9rem;
+    color: #1c1c1c;
+    font-weight: 400;
+}
+
+main .sidebar section.editor .form-button {
+    font-weight: 600;
+    cursor: pointer;
+    color: #005bbb;
+    transition: 300ms ease-in-out;
+    margin-top: 10px;
+}
+
+main .sidebar section.editor .form-button:hover {
+    border: 1px solid #005bbb;
+    background-color: #007bff10;
 }
 
 main .sidebar svg {
-    width: 1.8rem;
+    width: 30px;
+    stroke: rgb(50, 50, 50);
 }
 
 main .sidebar > div {
@@ -59,7 +104,7 @@ main .sidebar .title > span {
 main .sidebar form {
     margin-top: 20px;
     display: flex;
-    gap: 20px;
+    gap: 14px;
     flex-direction: column;
 }
 
@@ -74,8 +119,6 @@ main .sidebar form .form-input {
 main > .container > .preview {
     display: flex;
     justify-content: center;
-    margin-left: 340px;
-    width: 100%;
     overflow: hidden;
 }
 
