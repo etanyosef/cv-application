@@ -1,4 +1,21 @@
-export default function Resume({personalDetails: {fullName, email, phoneNumber, address}}) {
+export default function Resume({
+    personalDetails: {fullName, email, phoneNumber, address},
+    educationDetails,
+}) {
+
+    const educationSection = educationDetails.map(education => (
+        <div>
+            <b>{education.school}</b>
+            <p>{education.degree}</p>
+            
+            <p>School: {education.school}</p>
+            <p>Degree: {education.degree}</p>
+            <p>Location: {education.location}</p>
+            <p>Start date: {education.startDate}</p>
+            <p>End date: {education.endDate}</p>
+        </div>
+    ))
+
     return (
         <div className="resume">
             <div className="resume-header">
@@ -9,7 +26,13 @@ export default function Resume({personalDetails: {fullName, email, phoneNumber, 
                 <p>address: {address}</p>
             </div>
             <div className="resume-content">
-                <h2>Resume Content</h2>
+                <section>
+                    <h2>Education</h2>
+                    {educationSection}
+                </section>
+                <section>
+                    <h2>Experience</h2>
+                </section>
             </div>
         </div>
     )
