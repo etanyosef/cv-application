@@ -11,7 +11,7 @@ export default function Sidebar({
 }) {
     return (
         <div className="sidebar">
-            <Nav />
+            {/* <Nav /> */}
             <Editor 
                 personalDetails={personalDetails} 
                 education={education}
