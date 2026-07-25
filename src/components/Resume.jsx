@@ -1,18 +1,14 @@
 export default function Resume({
     personalDetails: {fullName, email, phoneNumber, address},
-    educationDetails,
+    education,
 }) {
 
-    const educationSection = educationDetails.map(education => (
-        <div>
-            <b>{education.school}</b>
-            <p>{education.degree}</p>
-            
-            <p>School: {education.school}</p>
-            <p>Degree: {education.degree}</p>
-            <p>Location: {education.location}</p>
-            <p>Start date: {education.startDate}</p>
-            <p>End date: {education.endDate}</p>
+    const educationSection = education.map(educ => (
+        <div className="education" key={educ.id}>
+            <b>{educ.school}</b>
+            <p>{educ.degree}</p>
+            <p>{educ.location}</p>
+            <p>{educ.startDate} - {educ.endDate}</p>
         </div>
     ))
 
@@ -28,7 +24,9 @@ export default function Resume({
             <div className="resume-content">
                 <section>
                     <h2>Education</h2>
-                    {educationSection}
+                    <div className="educations">
+                        {educationSection}
+                    </div>
                 </section>
                 <section>
                     <h2>Experience</h2>
