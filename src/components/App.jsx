@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Education from "./Education"
+import EducationForm from "./EducationForm"
 import Experience from "./Experience"
 import Footer from "./Footer"
 import PersonalDetails from "./PersonalDetails"
@@ -8,13 +8,23 @@ import { defaultData } from "../defaultData"
 
 export default function App() {
     const [personalDetails, setPersonalDetails] = useState(defaultData.personalDetails)
-    
-    function handleOnChange(e) {
+    const [educationDetails, setEducationDetails] = useState(defaultData.educationDetails);
+
+    console.log(educationDetails)
+
+    function handlePersonalDetailsInput(e) {
         const {key} = e.target.dataset
-        
         setPersonalDetails({
             ...personalDetails, 
-            [key]: e.target.value
+            [key]: e.target.value,
+        })
+    }
+
+    function handleEducationDetailsInput(e) {
+        const {key} = e.target.dataset
+        setEducationDetails({
+            ...educationDetails, 
+            [key]: e.target.value,
         })
     }
 
@@ -25,13 +35,17 @@ export default function App() {
                     <div className="sidebar">
                         <PersonalDetails 
                             data={personalDetails}
-                            onChange={handleOnChange}
+                            onChange={handlePersonalDetailsInput}
                         />
-                        <Education />
+                        <EducationForm
+                            data={educationDetails}
+                            onChange={handleEducationDetailsInput}
+                        />
                         <Experience />
                     </div>
                     <Resume
                         personalDetails={personalDetails}
+                        educationDetails={educationDetails}
                     />
                 </div>
             </main>
