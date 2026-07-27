@@ -21,8 +21,8 @@ export default function Editor({
     }
 
     const educations = education.map(educ => (
-        <>
-            <div className="side-item" key={educ.id}>
+        <div key={educ.id}>
+            <div className="side-item">
                 <button onClick={() => showFormHandler(educ.id)}>
                     <h3>{educ.school}</h3>
                 </button>
@@ -38,12 +38,12 @@ export default function Editor({
                 
             <EducationForm 
                 isActive={activeIndex === educ.id} 
-                education={education}
+                education={educ}
                 educationOnChange={educationOnChange}
                 addEducation={addEducation}
                 saveEducation={saveEducation}
             />
-        </>
+        </div>
     ))
         
     return (
@@ -64,6 +64,9 @@ export default function Editor({
                     </div>
                     <div className="container">
                         {educations}
+                        <button className="form-button" onClick={addEducation}>
+                            + Add Education
+                        </button>
                     </div>
                 </div>
                 {/* <EducationForm
