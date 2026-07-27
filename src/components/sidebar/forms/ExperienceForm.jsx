@@ -8,6 +8,33 @@ export default function ExperienceForm() {
                 </span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
             </div>
+            <form action="">
+                <div className="form-input">
+                    <label htmlFor="company">Company</label>
+                    <input type="text" id="company" name="company" />
+                </div>
+                <div className="date-group">
+                    <div className="form-input">
+                        <label htmlFor="startDate">Start Date</label>
+                        <input type="month" id="startDate" name="startDate" />
+                    </div>
+                    <div className="form-input">
+                        <label htmlFor="endDate">End Date</label>
+                        <input type="month" id="endDate" name="endDate" />
+                    </div>
+                </div>
+                <div className="form-input">
+                    <label htmlFor="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" name="jobTitle" />
+                </div>
+                <div className="form-input">
+                    <label htmlFor="location">Location</label>
+                    <input type="text" id="location" name="location" />
+                </div>
+                <button className="form-button" type="submit">
+                    + Add
+                </button>
+            </form>
         </div>
     )
 }
