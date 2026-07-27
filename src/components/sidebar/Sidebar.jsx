@@ -15,22 +15,35 @@ export default function Editor({
 
     const [activeIndex, setActiveIndex] = useState(0);
 
-
+    function showFormHandler(id) {
+        activeIndex === id ? setActiveIndex(0) : setActiveIndex(prevIndex => prevIndex = id)
+        console.log(activeIndex)
+    }
 
     const educations = education.map(educ => (
-        <div className="side-item" key={educ.id}>
-            <button onClick={}>
-                <h3>{educ.school}</h3>
-            </button>
-            <button onClick={() => {
-                deleteEducation(educ.id)
-            }}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <title>Delete</title>
-                    <path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" />
-                </svg>
-            </button>
-        </div>
+        <>
+            <div className="side-item" key={educ.id}>
+                <button onClick={() => showFormHandler(educ.id)}>
+                    <h3>{educ.school}</h3>
+                </button>
+                <button onClick={() => {
+                    deleteEducation(educ.id)
+                }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <title>Delete</title>
+                        <path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" />
+                    </svg>
+                </button>
+            </div>
+                
+            <EducationForm 
+                isActive={activeIndex === educ.id} 
+                education={education}
+                educationOnChange={educationOnChange}
+                addEducation={addEducation}
+                saveEducation={saveEducation}
+            />
+        </>
     ))
         
     return (
@@ -53,13 +66,13 @@ export default function Editor({
                         {educations}
                     </div>
                 </div>
-                <EducationForm
+                {/* <EducationForm
                     education={education}
                     educationOnChange={educationOnChange}
                     addEducation={addEducation}
                     saveEducation={saveEducation}
                     // onChange={handleEducationDetailsInput}
-                />
+                /> */}
                 <ExperienceForm />
             </section>
         </div>
