@@ -113,6 +113,11 @@ main .sidebar form .form-input {
     flex-direction: column;
 }
 
+main .sidebar form .date-group {
+    display: flex;
+    gap: 10px;
+}
+
 
 /* Resume */
 
