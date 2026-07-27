@@ -48,23 +48,25 @@ export default function EducationForm({
                         required
                     />
                 </div>
-                <div className="form-input">
-                    <label htmlFor="startDate">Start Date</label>
-                    <input 
-                        type="month" 
-                        id="startDate" 
-                        name="startDate"
-                        required
-                    />
-                </div>
-                <div className="form-input">
-                    <label htmlFor="endDate">End Date</label>
-                    <input 
-                        type="month" 
-                        id="endDate" 
-                        name="endDate"
-                        required
-                    />
+                <div className="date-group">
+                    <div className="form-input">
+                        <label htmlFor="startDate">Start Date</label>
+                        <input 
+                            type="month" 
+                            id="startDate" 
+                            name="startDate"
+                            required
+                        />
+                    </div>
+                    <div className="form-input">
+                        <label htmlFor="endDate">End Date</label>
+                        <input 
+                            type="month" 
+                            id="endDate" 
+                            name="endDate"
+                            required
+                        />
+                    </div>
                 </div>
                 <button className="form-button" type="submit">
                     + Add
