@@ -7,6 +7,8 @@ export default function EducationForm({
     isActive
 }) {
     return (
+        <>
+        {isActive ? (
         <div className="education-details">
             {/* <div className="title">
                 <span>
@@ -16,7 +18,7 @@ export default function EducationForm({
                     <h2>Education</h2>
                 </span>                
             </div> */}
-            {isActive ? (
+            
             <form action={saveEducation}>
                 <div className="form-input">
                     <label htmlFor="school">School</label>
@@ -26,6 +28,8 @@ export default function EducationForm({
                         name="school"
                         placeholder="Enter school (elem, hs, college)" 
                         data-key="school"
+                        value={education.school}
+                        onChange={(e) => educationOnChange(e, education.id)}
                         required
                     />
                 </div>
@@ -69,11 +73,13 @@ export default function EducationForm({
                         />
                     </div>
                 </div>
-                <button className="form-button" type="submit">
+                {/* <button className="form-button" type="submit">
                     + Add Education
-                </button>
+                </button> */}
             </form>
-            ) : null}
+            
         </div>
+        ) : null}
+        </>
     )
 }
