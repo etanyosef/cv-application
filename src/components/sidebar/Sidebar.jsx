@@ -6,6 +6,7 @@ export default function Sidebar({
     education,
     educationOnChange,
     addEducation,
+    deleteEducation,
     saveEducation,
     onChange 
 }) {
@@ -17,6 +18,7 @@ export default function Sidebar({
                 education={education}
                 educationOnChange={educationOnChange}
                 saveEducation={saveEducation}
+                deleteEducation={deleteEducation}
                 onChange={onChange}  
             />       
         </div>
