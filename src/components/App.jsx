@@ -42,6 +42,12 @@ export default function App() {
         ])
     }
 
+    function deleteEducation(id) {
+        setEducation(prevEducation => prevEducation.filter(
+            educ => educ.id !== id
+        ))
+    }
+
     function educationOnChange(e, id) {
         const {name} = e.target.name
         setEducation((prevEducation) => prevEducation.map((educ) => {
@@ -49,7 +55,7 @@ export default function App() {
         }))
     }
 
-    function saveEducation(e, id) {
+    function saveEducation(e) {
         const school = e.get('school')
         const degree = e.get('degree')
         const location = e.get('location')
@@ -75,6 +81,7 @@ export default function App() {
                 <div className="container">
                     <Sidebar 
                         personalDetails={personalDetails} 
+                        deleteEducation={deleteEducation}
                         education={education}
                         educationOnChange={educationOnChange}
                         addEducation={addEducation}
