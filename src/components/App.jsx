@@ -33,7 +33,7 @@ export default function App() {
             ...prevEducation,
             {
                 id: crypto.randomUUID(),
-                school: '',
+                school: 'New Education',
                 degree: '',
                 location: '',
                 startDate: '',
