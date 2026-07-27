@@ -13,6 +13,10 @@ export default function ExperienceForm() {
                     <label htmlFor="company">Company</label>
                     <input type="text" id="company" name="company" />
                 </div>
+                <div className="form-input">
+                    <label htmlFor="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" name="jobTitle" />
+                </div>
                 <div className="date-group">
                     <div className="form-input">
                         <label htmlFor="startDate">Start Date</label>
@@ -24,15 +28,11 @@ export default function ExperienceForm() {
                     </div>
                 </div>
                 <div className="form-input">
-                    <label htmlFor="jobTitle">Job Title</label>
-                    <input type="text" id="jobTitle" name="jobTitle" />
-                </div>
-                <div className="form-input">
                     <label htmlFor="location">Location</label>
                     <input type="text" id="location" name="location" />
                 </div>
                 <button className="form-button" type="submit">
-                    + Add
+                    + Add Experience
                 </button>
             </form>
         </div>
