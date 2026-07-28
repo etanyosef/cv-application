@@ -12,7 +12,7 @@ export default function Resume({
     }
 
     const educationList = education.map(educ => (
-        <div className="item-list" key={educ.id}>
+        <div className="list-item" key={educ.id}>
             <span>
                 {educ.startDate ? formattedDate(educ.startDate) : null}
                 <span> &mdash; </span>
@@ -20,14 +20,14 @@ export default function Resume({
             </span>
             <span className="right">
                 <h3>{educ.school}</h3>
-                <p>{educ.degree}</p>
-                <p>{educ.location}</p>
+                <b>{educ.degree}</b>
+                <i>{educ.location}</i>
             </span>
         </div>
     ))
 
     const experienceList = experience.map(exp => (
-        <div className="experience" key={exp.id}>
+        <div className="list-item" key={exp.id}>
             <span>
                 {exp.startDate ? formattedDate(exp.startDate) : null}
                 <span> &mdash; </span>
@@ -35,8 +35,9 @@ export default function Resume({
             </span>
             <span className="right">
                 <h3>{exp.company}</h3>
-                <p>{exp.jobTitle}</p>
-                <p>{exp.location}</p>
+                <b>{exp.jobTitle}</b>
+                <i>{exp.location}</i>
+                <p>{exp.responsibilities}</p>
             </span>
         </div>
     ))

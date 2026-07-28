@@ -60,6 +60,15 @@ export default function ExperienceForm({
                                 onChange={e => experienceOnChange(e, experience.id)}
                             />
                         </div>
+                        <div className="form-input">
+                            <label htmlFor="responsibilities">Responsibilities</label>
+                            <textarea 
+                                id="responsibilities"
+                                data-key="responsibilities"
+                                value={experience.responsibilities}
+                                onChange={e => experienceOnChange(e, experience.id)}
+                            ></textarea>
+                        </div>
                     </form>
                 </div>
             ) : null}

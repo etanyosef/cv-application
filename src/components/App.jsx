@@ -86,6 +86,7 @@ export default function App() {
                 location: '',
                 startDate: '',
                 endDate: '',
+                responsibilities: '',
             },
         ])
     }
