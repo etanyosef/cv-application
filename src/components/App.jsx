@@ -20,14 +20,6 @@ export default function App() {
         })
     }
 
-    function handleEducationDetailsInput(e) {
-        const {key} = e.target.dataset
-        setEducation({
-            ...educationDetails, 
-            [key]: e.target.value,
-        })
-    }
-
     function addEducation() {
         setEducation((prevEducation) => [
             ...prevEducation,
