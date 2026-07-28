@@ -17,7 +17,6 @@ export default function Editor({
 
     function showFormHandler(id) {
         activeIndex === id ? setActiveIndex(0) : setActiveIndex(prevIndex => prevIndex = id)
-        console.log(activeIndex)
     }
 
     const educations = education.map(educ => (
