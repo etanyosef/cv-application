@@ -25,3 +25,14 @@ export const educationDetails = [
         endDate: '2024-02'
     },
 ]
+
+export const experienceDetails = [
+    {
+        id: crypto.randomUUID(),
+        company: 'Microhard',
+        jobTitle: 'Janitor',
+        location: 'Kanturatoy',
+        startDate: '2025-03',
+        endDate: '2026-04',
+    },
+]
