@@ -22,7 +22,7 @@ export default function App() {
 
     function handleEducationDetailsInput(e) {
         const {key} = e.target.dataset
-        setEducationDetails({
+        setEducation({
             ...educationDetails, 
             [key]: e.target.value,
         })
@@ -33,7 +33,7 @@ export default function App() {
             ...prevEducation,
             {
                 id: crypto.randomUUID(),
-                school: 'New Education',
+                school: '',
                 degree: '',
                 location: '',
                 startDate: '',
