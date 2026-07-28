@@ -1,15 +1,13 @@
 export default function EducationForm({
-    // onChange,
     education,
     educationOnChange,
-    saveEducation,
     isActive
 }) {
     return (
         <>
             {isActive ? (
                 <div className="education-details">            
-                    <form action={saveEducation}>
+                    <form>
                         <div className="form-input">
                             <label htmlFor="school">School</label>
                             <input 
