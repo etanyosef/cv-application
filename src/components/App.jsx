@@ -49,9 +49,16 @@ export default function App() {
     }
 
     function educationOnChange(e, id) {
-        const {name} = e.target.name
+        const {key} = e.target.dataset
         setEducation((prevEducation) => prevEducation.map((educ) => {
-            educ.id === id ? {...educ, [name]: e.target.value} : educ
+            if (educ.id === id) {
+                return {
+                    ...educ, 
+                    [key]: e.target.value
+                }
+            } else {
+                return educ
+            }
         }))
     }
 
