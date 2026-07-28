@@ -1,11 +1,11 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     background-color: rgb(244, 244, 244);
-    font-family: Arial, Helvetica, sans-serif;
     color: #2a2a2a;
 }
 
@@ -76,14 +76,21 @@ main .sidebar section.editor .form-input {
 }
 
 main .sidebar section.editor .form-input input,
+main .sidebar section.editor .form-input textarea,
 main .sidebar section.editor .form-button {
     padding: 8px 6px;
     border: 1px solid #d9d8e5;
     border-radius: 6px;
 }
 
-main .sidebar section.editor .form-input input:focus {
+main .sidebar section.editor .form-input input:focus,
+main .sidebar section.editor .form-input textarea:focus {
     outline: 2px solid #007bff66;
+}
+
+main .sidebar section.editor .form-input textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 main .sidebar section.editor .form-input label {
@@ -214,10 +221,11 @@ main .resume section .list-container .right {
     gap: 0.3rem;
 }
 
-main .resume section .list-container > div {
-    display: flex;
-    gap: 2rem;
-    align-items: start;
+main .resume section .list-container .list-item {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 200px 1fr;
+    /* gap: 2rem; */
 }
 
 main .resume svg {
