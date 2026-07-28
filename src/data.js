@@ -13,15 +13,15 @@ export const educationDetails = [
         school: 'Miputak Elementary School',
         degree: 'Elementary',
         location: 'Miputak, Dipolog City',
-        startDate: '01/2016',
-        endDate: '02/2020'
+        startDate: '2016-01',
+        endDate: '2020-02'
     },
     {
         id: crypto.randomUUID(),
         school: 'Andres Bonifacio College',
         degree: 'Computer Science',
         location: 'Miputak, Dipolog City',
-        startDate: '01/2020',
-        endDate: '02/2024'
+        startDate: '2020-01',
+        endDate: '2024-02'
     },
 ]
