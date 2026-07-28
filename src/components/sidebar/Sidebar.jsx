@@ -24,7 +24,7 @@ export default function Editor({
         <div key={educ.id}>
             <div className="side-item">
                 <button onClick={() => showFormHandler(educ.id)}>
-                    <h3>{educ.school}</h3>
+                    <h3>{educ.school ? educ.school : 'New Education'}</h3>
                 </button>
                 <button onClick={() => {
                     deleteEducation(educ.id)
