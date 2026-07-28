@@ -2,6 +2,7 @@ import { useState } from "react"
 import { 
     defaultData,
     educationDetails,
+    experienceDetails,
 } from "../data"
 
 import Footer from "./Footer"
@@ -11,6 +12,7 @@ import Sidebar from "./sidebar/Sidebar"
 export default function App() {
     const [personalDetails, setPersonalDetails] = useState(defaultData.personalDetails)
     const [education, setEducation] = useState(educationDetails)
+    const [experience, setExperience] = useState(experienceDetails)
 
     function handlePersonalDetailsInput(e) {
         const {key} = e.target.dataset
@@ -74,24 +76,56 @@ export default function App() {
         ]))
     }
 
+    function addExperience() {
+        setExperience(prevExperience => [
+            ...prevExperience,
+            {
+                id: crypto.randomUUID(),
+                company: '',
+                jobTitle: '',
+                location: '',
+                startDate: '',
+                endDate: '',
+            },
+        ])
+    }
+
+    function deleteExperience(id) {
+        setExperience(prevExperience => prevExperience.filter(
+            exp => exp.id !== id
+        ))
+    }
+
+    function experienceOnChange(e, id) {
+        const {key} = e.target.dataset
+        setExperience(prevExperience => prevExperience.map(exp => (
+            exp.id === id ? {...exp, [key]: e.target.value} : exp
+        )))
+    }
+
     return (
         <>
             <main>
                 <div className="container">
                     <Sidebar 
                         personalDetails={personalDetails} 
+                        onChange={handlePersonalDetailsInput}
                         deleteEducation={deleteEducation}
                         education={education}
                         educationOnChange={educationOnChange}
                         addEducation={addEducation}
                         saveEducation={saveEducation}
-                        onChange={handlePersonalDetailsInput}
+                        experience={experience}
+                        addExperience={addExperience}
+                        deleteExperience={deleteExperience}
+                        experienceOnChange={experienceOnChange}
                     />
 
                     <div className="preview">
                         <Resume
                             personalDetails={personalDetails}
                             education={education}
+                            experience={experience}
                         />
                     </div>
 
