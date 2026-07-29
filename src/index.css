@@ -9,15 +9,21 @@ body {
     color: #2a2a2a;
 }
 
+h3 {
+    font-size: 1.1rem;
+}
+
 main > .container {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 16px;
+    padding: 4px 8px;
 }
 
 main .sidebar {
-    width: 340px;
+    min-width: 360px;
     display: flex;
+    transform-origin: top right;
 }
 
 main .sidebar nav {
@@ -81,6 +87,7 @@ main .sidebar section.editor .form-button {
     padding: 8px 6px;
     border: 1px solid #d9d8e5;
     border-radius: 6px;
+    font-size: 0.9rem;
 }
 
 main .sidebar section.editor .form-input input:focus,
@@ -96,10 +103,11 @@ main .sidebar section.editor .form-input textarea {
 main .sidebar section.editor .form-input label {
     font-size: 0.9rem;
     color: #1c1c1c;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 main .sidebar section.editor .form-button {
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     color: #005bbb;
@@ -159,7 +167,7 @@ main .sidebar form .date-group {
 main > .container > .preview {
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    transform-origin: top left;
 }
 
 main .container .resume {
@@ -167,9 +175,8 @@ main .container .resume {
     margin-top: 30px;
     width: 21cm;
     min-height: 29.7cm;
-    transform-origin: top;
     background-color: white;    
-    box-shadow: 1px 1px 12px rgb(230, 230, 230);
+    box-shadow: 1px 1px 9px rgb(222, 222, 222);
 }
 
 main .resume > .resume-header {
@@ -230,4 +237,52 @@ main .resume section .list-container .list-item {
 
 main .resume svg {
     width: 1.4rem;
+}
+
+
+@media (min-width: 1000px) and (max-width: 1200px ) {
+    main > .container .preview {
+        scale: 0.8;
+        overflow: hidden;
+        margin-right: -160px;
+        margin-bottom: -200px;
+        flex-shrink: 0;
+    }
+
+    main > .container .sidebar {
+        scale: 0.9;
+        margin-left: -40px;
+    }
+
+    
+}
+
+@media (min-width: 900px) and (max-width: 1000px) {
+    main > .container .preview {
+        scale: 0.7;
+        margin-right: -160px;
+        margin-bottom: -300px;
+    }
+
+    main > .container .sidebar {
+        scale: 0.8;
+    }
+}
+
+@media (max-width: 900px) {
+    main {
+        padding: 0 8px;
+    }
+
+    main > .container {
+        flex-direction: column;
+    }
+
+    main > .container .preview {
+        scale: 0.8;
+        transform-origin: top;
+        margin-left: -100px;
+        margin-right: -100px;
+        margin-bottom: -200px;
+    }
 }
