@@ -15,8 +15,7 @@ export default function Resume({
         <div className="list-item" key={educ.id}>
             <span>
                 {educ.startDate ? formattedDate(educ.startDate) : null}
-                <span> &mdash; </span>
-                {educ.endDate ? formattedDate(educ.endDate) : null}
+                {educ.endDate ? ' — ' + formattedDate(educ.endDate) : null}
             </span>
             <span className="right">
                 <h3>{educ.school}</h3>
@@ -30,8 +29,7 @@ export default function Resume({
         <div className="list-item" key={exp.id}>
             <span>
                 {exp.startDate ? formattedDate(exp.startDate) : null}
-                <span> &mdash; </span>
-                {exp.endDate ? formattedDate(exp.endDate) : null}
+                {exp.endDate ? ' — ' + formattedDate(exp.endDate) : null}
             </span>
             <span className="right">
                 <h3>{exp.company}</h3>
