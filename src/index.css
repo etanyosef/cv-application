@@ -9,6 +9,10 @@ body {
     color: #2a2a2a;
 }
 
+hr {
+    border: 1px solid rgb(240, 240, 240);
+}
+
 h3 {
     font-size: 1.1rem;
 }
@@ -75,6 +79,10 @@ main .sidebar section.editor > div .side-item button svg:hover {
     scale: 1.1;
 }
 
+main .sidebar section.editor form {
+    margin: 10px 0;
+}
+
 main .sidebar section.editor .form-input {
     display: flex;
     flex-direction: column;
@@ -97,13 +105,24 @@ main .sidebar section.editor .form-input textarea:focus {
 
 main .sidebar section.editor .form-input textarea {
     resize: vertical;
-    min-height: 100px;
+    width: 100%;
+    min-height: 50px;
 }
 
 main .sidebar section.editor .form-input label {
     font-size: 0.9rem;
     color: #1c1c1c;
     font-weight: 600;
+}
+
+main .sidebar section.editor .responsibilities {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+main .sidebar section.editor .responsibilities .side-item {
+    gap: 1rem;
 }
 
 main .sidebar section.editor .form-button {
@@ -226,13 +245,19 @@ main .resume section .list-container .right {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    align-items: end;
 }
 
 main .resume section .list-container .list-item {
-    display: grid;
     width: 100%;
-    grid-template-columns: 200px 1fr;
-    /* gap: 2rem; */
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+main .resume section .list-container .list-item > div {
+    display: flex;
+    justify-content: space-between;
 }
 
 main .resume svg {
