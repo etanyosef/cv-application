@@ -14,6 +14,8 @@ export default function Editor({
     addExperience,
     deleteExperience,
     experienceOnChange,
+    responsibilityOnChange,
+    addResponsibility
 }) {
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -61,6 +63,8 @@ export default function Editor({
                 isActive={activeIndex === exp.id}
                 experience={exp}         
                 experienceOnChange={experienceOnChange}       
+                responsibilityOnChange={responsibilityOnChange}
+                addResponsibility={addResponsibility}
             />
         </div>
     ))
