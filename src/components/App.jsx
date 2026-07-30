@@ -86,7 +86,13 @@ export default function App() {
                 location: '',
                 startDate: '',
                 endDate: '',
-                responsibilities: '',
+                responsibilities: [
+                    // {
+                    //     id: crypto.randomUUID(),
+                    //     title: '',
+                    //     description: ''
+                    // },
+                ],
             },
         ])
     }
@@ -102,6 +108,39 @@ export default function App() {
         setExperience(prevExperience => prevExperience.map(exp => (
             exp.id === id ? {...exp, [key]: e.target.value} : exp
         )))
+    }
+
+    function addResponsibility(expId) {
+        setExperience(prevExperience => prevExperience.map(exp => {
+            if (exp.id === expId) {
+                return {
+                    ...exp,
+                    responsibilities: [
+                        ...exp.responsibilities,
+                        {
+                            id: crypto.randomUUID(), 
+                            title: '', 
+                            description: ''
+                        }
+                    ]
+                }
+            } else {
+                return exp
+            }
+        }))
+    }
+
+    function responsibilityOnChange(e, expId, respId) {
+        const {key} = e.target.dataset
+        setExperience(prevExperience => prevExperience.map(exp => {
+            if (exp.id === expId) {
+                exp.responsibilities.map(resp => {
+                    resp.id === respId ? {...resp, [key]: e.target.value} : resp
+                })
+            } else {
+                return exp
+            }
+        }))
     }
 
     return (
@@ -120,6 +159,8 @@ export default function App() {
                         addExperience={addExperience}
                         deleteExperience={deleteExperience}
                         experienceOnChange={experienceOnChange}
+                        addResponsibility={addResponsibility}
+                        responsibilityOnChange
                     />
 
                     <div className="preview">
