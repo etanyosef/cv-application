@@ -77,6 +77,8 @@ export default function EducationForm({
                     
                 </div>
             ) : null}
+            <br />
+            <hr />
         </>
     )
 }
