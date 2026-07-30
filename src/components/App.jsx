@@ -134,9 +134,12 @@ export default function App() {
         const {key} = e.target.dataset
         setExperience(prevExperience => prevExperience.map(exp => {
             if (exp.id === expId) {
-                exp.responsibilities.map(resp => {
-                    resp.id === respId ? {...resp, [key]: e.target.value} : resp
-                })
+                return {
+                    ...exp,
+                    responsibilities: exp.responsibilities.map(resp => {
+                        resp.id === respId ? { ...resp, [key]: e.target.value } : resp
+                    })
+                }                  
             } else {
                 return exp
             }
@@ -160,7 +163,7 @@ export default function App() {
                         deleteExperience={deleteExperience}
                         experienceOnChange={experienceOnChange}
                         addResponsibility={addResponsibility}
-                        responsibilityOnChange
+                        responsibilityOnChange={responsibilityOnChange}
                     />
 
                     <div className="preview">
