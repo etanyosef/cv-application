@@ -7,11 +7,15 @@ export default function ExperienceForm({
 }) {
 
     const responsibilitiesList = experience.responsibilities.map(resp => (
-        <div key={resp.id}>
-            <div className="side-item">
-                <button>
-                    <h4>{resp.title}</h4>            
-                </button>
+            <div className="side-item" key={resp.id}>
+                {/* <button>
+                    <h4>{resp.title ? resp.title : 'New responsibility'}</h4>            
+                </button> */}
+                <textarea 
+                    // id={resp.id} 
+                    value={resp.text}
+                    onChange={e => responsibilityOnChange(e, experience.id, resp.id)}
+                ></textarea>
                 <button>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <title>Delete</title>
@@ -19,7 +23,6 @@ export default function ExperienceForm({
                     </svg>
                 </button>
             </div>
-        </div>
     ))
 
     return (
@@ -79,19 +82,15 @@ export default function ExperienceForm({
                                 onChange={e => experienceOnChange(e, experience.id)}
                             />
                         </div>
-                        <div className="form-input">
+                        <div className="form-input responsibilities">
                             <label htmlFor="responsibilities">Responsibilities</label>
                             {/* <textarea 
                                 id="responsibilities"
                                 data-key="responsibilities"
                                 value={experience.responsibilities}
                                 onChange={e => experienceOnChange(e, experience.id)}
-                            ></textarea> */}
-                            {responsibilitiesList.length > 0 ? 
-                            <ul>
-                                {responsibilitiesList}
-                            </ul>
-                            : null }
+                            ></textarea> */}                            
+                            {responsibilitiesList}
                         </div>
                     </form>
                     <button 
@@ -125,7 +124,7 @@ function responsibilitiesForm(responsibility, responsibilityOnChange) {
                 <textarea 
                     id="description"
                     data-key="description"
-                    value={responsibility.description}
+                    value={responsibility.text}
                     onChange={responsibilityOnChange}
                 ></textarea>
             </div>
