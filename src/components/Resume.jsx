@@ -13,30 +13,49 @@ export default function Resume({
 
     const educationList = education.map(educ => (
         <div className="list-item" key={educ.id}>
-            <span>
-                {educ.startDate ? formattedDate(educ.startDate) : null}
-                {educ.endDate ? ' — ' + formattedDate(educ.endDate) : null}
-            </span>
-            <span className="right">
-                <h3>{educ.school}</h3>
-                <b>{educ.degree}</b>
-                <i>{educ.location}</i>
-            </span>
+            <div>                
+                <span>
+                    <h3>{educ.school}</h3>
+                    <b>{educ.degree}</b>
+                </span>
+                <span className="right">
+                    <p>
+                        {educ.startDate ? formattedDate(educ.startDate) : null}
+                        {educ.endDate ? ' — ' + formattedDate(educ.endDate) : null}
+                    </p>
+                    <p>
+                        <i>{educ.location}</i>                    
+                    </p>
+                </span>
+            </div>
         </div>
     ))
 
     const experienceList = experience.map(exp => (
-        <div className="list-item" key={exp.id}>
-            <span>
-                {exp.startDate ? formattedDate(exp.startDate) : null}
-                {exp.endDate ? ' — ' + formattedDate(exp.endDate) : null}
-            </span>
-            <span className="right">
-                <h3>{exp.company}</h3>
-                <b>{exp.jobTitle}</b>
-                <i>{exp.location}</i>
-                <p>{exp.responsibilities}</p>
-            </span>
+        <div className="list-item" key={exp.id}>            
+            <div>
+                <span>
+                    <h3>{exp.company}</h3>
+                    <b>{exp.jobTitle}</b>
+                    {/* <p>{exp.responsibilities}</p> */}
+                </span>
+                <span className="right">
+                    <p>
+                        {exp.startDate ? formattedDate(exp.startDate) : null}
+                        {exp.endDate ? ' — ' + formattedDate(exp.endDate) : null}
+                    </p>
+                    <p>
+                        <i>{exp.location}</i>
+                    </p>
+                </span>
+            </div>
+            <ul>
+                    {exp.responsibilities.map(resp => (
+                        <li key={resp.id}>
+                            {resp.text}
+                        </li>
+                    ))}
+            </ul>
         </div>
     ))
 
