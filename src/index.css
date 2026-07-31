@@ -15,7 +15,8 @@ hr {
 }
 
 h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 ul li {
@@ -30,7 +31,7 @@ main > .container {
 }
 
 main .sidebar {
-    min-width: 400px;
+    min-width: 420px;
     display: flex;
     transform-origin: top right;
 }
@@ -56,12 +57,6 @@ main .sidebar section.editor > div {
     box-shadow: 0 0 9px #dadada;
 }
 
-main .sidebar section.editor > div .side-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 main .sidebar section.editor > div .container {
     display: flex;
     flex-direction: column;
@@ -70,27 +65,43 @@ main .sidebar section.editor > div .container {
 
 main .sidebar section.editor > div .container > div {
     border: 1px solid rgb(200, 200, 200);
-    padding: 8px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fbfeff;
+}
+
+main .sidebar section.editor > div .side-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .sidebar section.editor > div .side-item:hover {
+    background-color: #f4fafc;
+}
+
+main .sidebar section.editor > div .side-item button:first-child {
+    flex-grow: 1;
+    text-align: left;
 }
 
 main .sidebar section.editor > div .side-item button {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    padding: 0;
+    padding: 6px 10px;
 }
 
 main .sidebar section.editor > div .side-item button svg {
     fill: rgb(200, 50, 50);
     transition: 200ms ease-in-out;
 }
-main .sidebar section.editor > div .side-item button svg:hover {
+main .sidebar section.editor > div .side-item button:hover svg {
     fill: red;
     scale: 1.1;
 }
 
 main .sidebar section.editor form {
-    margin: 10px 0;
+    padding: 10px;
 }
 
 main .sidebar section.editor .form-input {
