@@ -110,7 +110,8 @@ export default function App() {
         )))
     }
 
-    function addResponsibility(expId) {
+    function addResponsibility(expId, e) {
+        e.preventDefault();
         setExperience(prevExperience => prevExperience.map(exp => {
             if (exp.id === expId) {
                 return {
