@@ -13,6 +13,7 @@ export default function ExperienceForm({
                 </button> */}
                 <textarea 
                     // id={resp.id} 
+                    data-key="text"
                     value={resp.text}
                     onChange={e => responsibilityOnChange(e, experience.id, resp.id)}
                 ></textarea>
