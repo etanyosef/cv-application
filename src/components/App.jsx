@@ -152,6 +152,21 @@ export default function App() {
         }))
     }
 
+    function deleteResponsibility(expId, respId) {
+        setExperience(prevExperience => prevExperience.map(exp => {
+            if (exp.id === expId) {
+                return {
+                    ...exp,
+                    responsibilities: exp.responsibilities.filter(resp => (
+                        resp.id !== respId
+                    ))
+                }
+            } else {
+                return exp
+            }
+        }))
+    }
+
     return (
         <>
             <main>
@@ -170,6 +185,7 @@ export default function App() {
                         experienceOnChange={experienceOnChange}
                         addResponsibility={addResponsibility}
                         responsibilityOnChange={responsibilityOnChange}
+                        deleteResponsibility={deleteResponsibility}
                     />
 
                     <div className="preview">
