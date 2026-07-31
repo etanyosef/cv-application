@@ -94,15 +94,13 @@ export default function ExperienceForm({
                             ></textarea> */}                            
                             {responsibilitiesList}
                         </div>
+                        <button 
+                            className="form-button"
+                            onClick={e => addResponsibility(experience.id, e)}
+                        >+ Add Responsibility</button>
                     </form>
-                    <button 
-                        className="form-button"
-                        onClick={() => addResponsibility(experience.id)}
-                    >+ Add Responsibility</button>
                 </div>
             ) : null}
-            <br />
-            <hr />
         </>
     )
 }
