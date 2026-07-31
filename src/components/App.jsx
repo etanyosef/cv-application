@@ -119,8 +119,7 @@ export default function App() {
                         ...exp.responsibilities,
                         {
                             id: crypto.randomUUID(), 
-                            title: '', 
-                            description: ''
+                            text: ''
                         }
                     ]
                 }
@@ -137,9 +136,16 @@ export default function App() {
                 return {
                     ...exp,
                     responsibilities: exp.responsibilities.map(resp => {
-                        resp.id === respId ? { ...resp, [key]: e.target.value } : resp
+                        if (resp.id === respId) { 
+                            return {
+                                ...resp, 
+                                [key]: e.target.value,
+                            }
+                        } else {
+                            return resp
+                        } 
                     })
-                }                  
+                }           
             } else {
                 return exp
             }
