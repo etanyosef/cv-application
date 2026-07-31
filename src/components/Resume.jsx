@@ -16,7 +16,7 @@ export default function Resume({
             <div>                
                 <span>
                     <h3>{educ.school}</h3>
-                    <b>{educ.degree}</b>
+                    <i>{educ.degree}</i>
                 </span>
                 <span className="right">
                     <p>
@@ -36,8 +36,7 @@ export default function Resume({
             <div>
                 <span>
                     <h3>{exp.company}</h3>
-                    <b>{exp.jobTitle}</b>
-                    {/* <p>{exp.responsibilities}</p> */}
+                    <i>{exp.jobTitle}</i>
                 </span>
                 <span className="right">
                     <p>
